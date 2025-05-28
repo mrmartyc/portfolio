@@ -221,6 +221,14 @@ header, nav, .nav-bar, .about-container, .portfolio-container {
   padding: 0 10px;
 }
 
+.project p {
+  color: white;
+  font-size: 1rem;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
 .project a {
   text-decoration: none;
   display: block;
