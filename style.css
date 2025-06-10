@@ -166,6 +166,58 @@ header, nav, .nav-bar, .about-container, .portfolio-container {
 }
 
 
+.social-icon {
+  position: relative;
+  display: column;
+  align-items: center;
+  justify-content: center;
+  color: white; 
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 3rem;
+}
+
+.icon-glow {
+  text-shadow: 0 0 5px #ffffff;
+}
+
+.social-icon i {
+  margin-left: 6px; 
+}
+
+
+#github-popup, #instagram-popup, #envelope-popup {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.7);  
+  padding: 10px;
+  color: white;
+  text-align: center;
+  min-width: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  font-size: small;
+}
+
+.social-icon.github:hover #github-popup,
+.social-icon.instagram:hover #instagram-popup,
+.social-icon.envelope:hover #envelope-popup {
+  opacity: 1;
+  pointer-events: auto;  
+  transform: translateX(-50%) scale(0.9);  
+}
+
+.social-icon:not(:hover) #github-popup,
+.social-icon:not(:hover) #instagram-popup,
+.social-icon:not(:hover) #envelope-popup {
+  opacity: 0; 
+  transform: translateX(-50%) scale(0.7);  
+}
+
+
 .portfolio-container {
   display: flex;
   flex-direction: column;
