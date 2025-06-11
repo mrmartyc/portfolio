@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RER51WEBJJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RER51WEBJJ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>martyc.eu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="particles.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Particles background -->
+<div id="particles-js"></div>
+<div id="loader">
+<div class="shapes"></div>
+</div>
+<script>
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("content");
+  
+    loader.style.display = "none";
+    content.style.display = "block";
+  });
+</script>
+<!-- Header and Navigation -->
+<div class="content" id="content" style="display:none;">
+<header>
+    <nav>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="https://martyc.eu">martyc.eu</a>
+            </div>
+            <div class="nav-items">
+                <a href="#portfolio"><i class="fa-solid fa-code fa-2xl" style="color: #929292;"></i>Portfolio</a>
+                <a href="#about"><i class="fa-solid fa-code fa-2xl" style="color: #929292;"></i>About</a>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+             </div>
+        </div>
+    </nav>
+</header>
+<div class="dropdown_menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+  </div>
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+  
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+  
+      toggleBtnIcon.classList = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
+    }
+   </script>
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h1 class="icon-glow">About Me</h1>
+        <div class="about-content">
+            <img src="profile.jpg" alt="My Photo" class="about-photo">
+            <div class="about-text">
+            <p>Hi! I'm a passionate web developer focused on building modern, responsive websites. I specialize in HTML, CSS, and JavaScript, and I also work with tools like Firebase and GitHub Pages.</p>
+            <p>I enjoy creating websites that not only look great but also perform well and are easy to use. I'm always learning new technologies and I love solving creative challenges – whether it's a portfolio, blog, or static site</p>
+            <i><b><p>If you have some questions you can contact me down be low via Instagram or E-mail</p></b></i>
+            </div>
+            <div class="socialki">
+                <a href="https://instagram.com/matej.vondracekk" target="_blank" class="social-icon instagram" id="instagram-icon-container">
+                    <i class="fa-brands fa-instagram icon-glow"></i>
+                    <div id="instagram-popup" class="instagram-popup">
+                        <span>Instagram<i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="https://github.com/mrmartyc" target="_blank" class="social-icon github" id="github-icon-container">
+                    <i class="fa-brands fa-github icon-glow"></i>
+                    <div id="github-popup" class="github-popup">
+                        <span>GitHub<i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="mailto:vondracekmatej83@gmail.com" target="_blank" class="social-icon envelope" id="envelope-icon-container">
+                    <i class="fa-solid fa-envelope icon-glow"></i>
+                    <div id="envelope-popup" class="envelope-popup">
+                        <span>E-mail<i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Portfolio Section -->
+
+<section class="portfolio-container">
+    <div class="portfolio" id="portfolio">
+        <h1 class="icon-glow">My Portfolio</h1>
+        <div class="projects">
+            <div class="project">
+                <a href="https://sigmapumpy.xyz">
+                    <img src="transparent_image.png" alt="Website 1">
+                    <h2>Sigma Pumpy Inc.</h2>
+                    <p>School project</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://uhulu.cz">
+                    <img src="pivecko.jpg" alt="Website 2">
+                    <h2>U Hůlů</h2>
+                    <p>Web for pub U Hůlů</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://martyc.eu">
+                    <img src="profile.jpg" alt="Website 2">
+                    <h2>My own website</h2>
+                    <p>My personal website</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://parties-fever.martyc.eu">
+                    <img src="logo_white.png" alt="Website 2">
+                    <h2>Parties Fever</h2>
+                    <p>Web for parties</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio2-container">
+    <div class="portfolio2">
+        <h1 class="icon-glow">Sites I help with</h1>
+        <div class="projects2">
+            <div class="project2">
+                <a href="https://nejlepsi-nabytek.cz">
+                    <img src="logo.png" alt="Website">
+                    <h2>Nejlepší nábytek s. r. o.</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Scripts -->
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
