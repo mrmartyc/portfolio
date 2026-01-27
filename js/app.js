@@ -1,4 +1,4 @@
-/* --- PŘEKLADY (DICTIONARY) --- */
+/* --- 1. PŘEKLADY (DICTIONARY) --- */
 const translations = {
     cs: {
         nav_about: "O mně",
@@ -7,23 +7,26 @@ const translations = {
         nav_contact: "Kontakt",
         
         // O MNĚ
-        hero_job: "Full-Stack Vývojář & Architekt Řešení",
+        hero_job: "Full-Stack Vývojář & Architekt",
         hero_hello: "Tvořím webové systémy,",
         hero_span_name: "které vydělávají.",
         hero_desc_1: "Nejsem jen programátor, jsem váš technický partner. Za poslední roky jsem přešel od tvorby jednoduchých webů k vývoji komplexních e-shopů a interních systémů na míru. Rozumím tomu, že web musí nejen vypadat dobře, ale hlavně plnit obchodní cíle.",
-        hero_desc_2: "Moje specializace je PHP backend a databázová architektura. Díky tomu, že ovládám celý proces vývoje (Full-Stack), dokážu doručit robustní řešení rychleji a efektivněji, než velké agentury.",
+        hero_desc_2: "Moje specializace je PHP backend a databázová architektura. Díky Full-Stack znalostem doručuji robustní řešení efektivně a čistě.",
         stat_years: "Let zkušeností",
-        stat_clients: "Spokojených klientů",
-        hero_contact_note: "Hledáte spolehlivost a čistý kód? Napište mi.",
+        stat_clients: "Spokojenost",
+        hero_contact_note: "Hledáte spolehlivost? Napište mi.",
         
-        // SLUŽBY (NOVÉ)
+        // SLUŽBY
         section_services: "Co nabízím",
         service_1_title: "Weby na míru",
         service_1_desc: "Moderní, rychlé a responzivní weby, které vás odliší od konkurence. Žádné šablony, ale čistý kód.",
         service_2_title: "E-shop řešení",
         service_2_desc: "Komplexní e-commerce systémy s napojením na platební brány a skladové hospodářství.",
+        
+        // ZDE JE TA OPRAVENÁ ČÁST
         service_3_title: "Správa & Údržba",
         service_3_desc: "Webem to nekončí. Postaráme se o technické aktualizace, zálohování i drobné úpravy textů či fotek. Vy se věnujte podnikání, techniku nechte na nás.",
+        
         service_4_title: "Aby vás bylo vidět",
         service_4_desc: "Mít web nestačí, zákazníci ho musí najít. Pomůžeme vám dostat se na přední příčky ve vyhledávačích (Google, Seznam), abyste měli více objednávek.",
 
@@ -49,25 +52,28 @@ const translations = {
         nav_contact: "Contact",
         
         // ABOUT
-        hero_job: "Full-Stack Developer & Solution Architect",
+        hero_job: "Full-Stack Developer & Architect",
         hero_hello: "Building web systems",
         hero_span_name: "that drive business.",
         hero_desc_1: "I'm not just a coder; I'm your technical partner. Over the years, I've evolved from building simple sites to architecting complex custom e-shops and internal systems. I understand that a website must not only look good but, more importantly, achieve business goals.",
-        hero_desc_2: "My core expertise lies in PHP backend and database architecture. As a Full-Stack developer controlling the entire development process, I deliver robust solutions faster and more efficiently than large agencies.",
+        hero_desc_2: "My core expertise lies in PHP backend and database architecture. As a Full-Stack developer, I deliver robust solutions efficiently and cleanly.",
         stat_years: "Years of Experience",
-        stat_clients: "Happy Clients",
-        hero_contact_note: "Looking for reliability and clean code? Let's talk.",
+        stat_clients: "Client Satisfaction",
+        hero_contact_note: "Looking for reliability? Let's talk.",
 
-        // SERVICES (NEW)
+        // SERVICES
         section_services: "Services",
         service_1_title: "Custom Websites",
         service_1_desc: "Modern, fast, and responsive websites that set you apart. No templates, just clean code.",
         service_2_title: "E-commerce Solutions",
         service_2_desc: "Complex e-commerce systems integrated with payment gateways and inventory management.",
+        
+        // ZDE JE TA OPRAVENÁ ČÁST (EN)
         service_3_title: "Management & Maintenance",
-        service_3_desc: "It doesn't end with the website launch. We take care of technical updates, backups, and minor text or photo adjustments. Focus on your business and leave the technical side to us.",
+        service_3_desc: "It doesn't end with the launch. We handle technical updates, backups, and content tweaks. Focus on your business and leave the tech to us.",
+        
         service_4_title: "Online Visibility",
-        service_4_desc: "Having a website isn't enough; customers need to find it. We will help you reach top positions in search engines (Google, Seznam) to drive more orders.",
+        service_4_desc: "Having a website isn't enough; customers need to find it. We will help you rank higher on search engines (Google, Seznam) to drive more orders.",
         
         // PORTFOLIO
         section_portfolio: "Selected Work",
@@ -86,8 +92,9 @@ const translations = {
     }
 };
 
-/* --- FUNKCE PRO ZMĚNU JAZYKA --- */
+/* --- 2. LOGIKA ZMĚNY JAZYKA --- */
 function changeLanguage(lang) {
+    // 1. Přepsat texty
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -96,50 +103,31 @@ function changeLanguage(lang) {
         }
     });
 
-    document.querySelectorAll('.lang-switch span, .mobile-lang span').forEach(span => {
-        span.classList.remove('active');
-        if(span.innerText.toLowerCase() === lang.toLowerCase() || 
-           (lang === 'cs' && span.innerText === 'CZ') || 
-           (lang === 'en' && span.innerText === 'EN')) {
-            span.classList.add('active');
-        }
-    });
-    
-    const enBtn = document.getElementById('lang-en');
+    // 2. Aktualizovat tlačítka (Desktop)
     const csBtn = document.getElementById('lang-cs');
-    if(enBtn && csBtn) {
-        if(lang === 'en') {
-            enBtn.classList.add('active');
-            csBtn.classList.remove('active');
-        } else {
+    const enBtn = document.getElementById('lang-en');
+    
+    if (csBtn && enBtn) {
+        if (lang === 'cs') {
             csBtn.classList.add('active');
             enBtn.classList.remove('active');
+        } else {
+            enBtn.classList.add('active');
+            csBtn.classList.remove('active');
         }
     }
+
+    // 3. Uložit do paměti
     localStorage.setItem('selectedLang', lang);
 }
 
-/* --- LOADER & INITIALIZATION --- */
-function hideLoader() {
-    const loader = document.getElementById("loader");
-    const content = document.getElementById("content");
-    if (!loader || loader.style.display === "none") return;
-    loader.style.opacity = "0";
-    if (content) {
-        content.style.display = "block";
-        setTimeout(() => {
-            loader.style.display = "none";
-            content.style.opacity = "1";
-        }, 500);
-    } else {
-        loader.style.display = "none";
-    }
-}
-
+/* --- 3. SPOUŠTĚNÍ PO NAČTENÍ --- */
 window.addEventListener("load", () => {
+    // Načíst jazyk
     const savedLang = localStorage.getItem('selectedLang') || 'cs';
     changeLanguage(savedLang);
 
+    // Particles
     if (typeof particlesJS !== 'undefined') {
         try {
             particlesJS("particles-js", {
@@ -150,21 +138,29 @@ window.addEventListener("load", () => {
                     "opacity": { "value": 0.5, "random": true },
                     "size": { "value": 3, "random": true },
                     "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
-                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                    "move": { "enable": true, "speed": 2 }
                 },
                 "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
-                },
-                "retina_detect": true
+                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } }
+                }
             });
-        } catch (e) { console.log("Chyba particles:", e); }
+        } catch (e) { console.log("Particles error:", e); }
     }
-    hideLoader();
+    
+    // Schovat loader
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("content");
+    if(loader && content) {
+        loader.style.opacity = "0";
+        content.style.display = "block";
+        setTimeout(() => {
+            loader.style.display = "none";
+            content.style.opacity = "1";
+        }, 500);
+    }
 });
-setTimeout(hideLoader, 3000);
 
-/* --- ANIMACE ČÍSEL --- */
+/* --- 4. ANIMACE ČÍSEL --- */
 const statsSection = document.querySelector('.stats-row');
 const counters = document.querySelectorAll('.counter');
 let started = false;
@@ -175,7 +171,7 @@ const observer = new IntersectionObserver((entries) => {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
             const symbol = counter.getAttribute('data-symbol') || "";
-            const duration = 2000;
+            const duration = 2000; 
             const increment = target / (duration / 16);
             let current = 0;
             const updateCounter = () => {
@@ -193,10 +189,11 @@ const observer = new IntersectionObserver((entries) => {
 });
 if(statsSection) { observer.observe(statsSection); }
 
-/* --- MOBILE MENU --- */
+/* --- 5. MENU & COOKIES --- */
 const toggleBtn = document.querySelector('.toggle_btn');
-const toggleBtnIcon = document.querySelector('.toggle_btn i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+
 if (toggleBtn) {
     toggleBtn.onclick = function () {
         dropDownMenu.classList.toggle('open');
@@ -205,10 +202,9 @@ if (toggleBtn) {
     };
 }
 
-/* --- COOKIES --- */
 const cookieBanner = document.getElementById('cookie-banner');
 const acceptBtn = document.getElementById('accept-cookies');
-if (!localStorage.getItem('cookiesAccepted')) {
+if (!localStorage.getItem('cookiesAccepted') && cookieBanner) {
     setTimeout(() => { cookieBanner.classList.add('show'); }, 2000);
 }
 if (acceptBtn) {
