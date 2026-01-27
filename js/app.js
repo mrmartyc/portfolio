@@ -22,8 +22,10 @@ const translations = {
         service_1_desc: "Moderní, rychlé a responzivní weby, které vás odliší od konkurence. Žádné šablony, ale čistý kód.",
         service_2_title: "E-shop řešení",
         service_2_desc: "Komplexní e-commerce systémy s napojením na platební brány a skladové hospodářství.",
-        service_3_title: "Backend & Systémy",
-        service_3_desc: "Interní firemní systémy, databáze, API propojení a automatizace procesů na pozadí.",
+        service_3_title: "Správa & Údržba",
+        service_3_desc: "Webem to nekončí. Postaráme se o technické aktualizace, zálohování i drobné úpravy textů či fotek. Vy se věnujte podnikání, techniku nechte na nás.",
+        service_4_title: "Aby vás bylo vidět",
+        service_4_desc: "Mít web nestačí, zákazníci ho musí najít. Pomůžeme vám dostat se na přední příčky ve vyhledávačích (Google, Seznam), abyste měli více objednávek.",
 
         // PORTFOLIO
         section_portfolio: "Ukázky mé práce",
@@ -62,8 +64,10 @@ const translations = {
         service_1_desc: "Modern, fast, and responsive websites that set you apart. No templates, just clean code.",
         service_2_title: "E-commerce Solutions",
         service_2_desc: "Complex e-commerce systems integrated with payment gateways and inventory management.",
-        service_3_title: "Backend & Systems",
-        service_3_desc: "Internal company systems, databases, API integrations, and background process automation.",
+        service_3_title: "Management & Maintenance",
+        service_3_desc: "It doesn't end with the website launch. We take care of technical updates, backups, and minor text or photo adjustments. Focus on your business and leave the technical side to us.",
+        service_4_title: "Online Visibility",
+        service_4_desc: "Having a website isn't enough; customers need to find it. We will help you reach top positions in search engines (Google, Seznam) to drive more orders.",
         
         // PORTFOLIO
         section_portfolio: "Selected Work",
