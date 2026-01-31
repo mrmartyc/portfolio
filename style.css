@@ -21,29 +21,22 @@ body {
   overflow-x: hidden;
 }
 
-/* --- LOADER --- */
-#loader {
-  position: fixed; width: 100%; height: 100%;
-  background: var(--bg-color);
-  display: flex; align-items: center; justify-content: center;
-  z-index: 9999; transition: opacity 0.5s ease;
-}
-.shapes {
-  width: 50px; height: 50px; background: var(--primary);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  animation: shapes-anim 2s infinite cubic-bezier(0.3, 1, 0, 1);
-  box-shadow: 0 0 20px var(--primary);
-}
-@keyframes shapes-anim {
-  33% { border-radius: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); background: var(--secondary); }
-  66% { border-radius: 50%; clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%); }
-}
-#content { display: none; opacity: 0; transition: opacity 0.8s ease; }
-
-/* --- BACKGROUND --- */
+#loader { display: none; }
 #particles-js {
   position: fixed; width: 100%; height: 100%;
-  z-index: -1; background: linear-gradient(to bottom right, #0f172a, #1e1b4b);
+  z-index: -1; 
+  background: linear-gradient(to bottom right, #0f172a, #1e1b4b);
+}
+
+#content { 
+  display: block; 
+  opacity: 1; 
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- NAVIGATION --- */
@@ -79,7 +72,6 @@ header {
 }
 .btn-contact:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5); }
 
-/* Jazykový přepínač */
 .lang-switch {
   display: flex; gap: 8px; margin-left: 10px;
   font-size: 0.9rem; font-weight: 600; color: var(--text-muted);
@@ -90,10 +82,8 @@ header {
 }
 .lang-switch .separator { cursor: default; }
 
-/* Mobilní menu toggle */
 .toggle_btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
 
-/* Dropdown menu */
 .dropdown_menu {
   position: absolute; right: 20px; top: 90px; width: 300px;
   background: rgba(30, 41, 59, 0.95); backdrop-filter: blur(15px);
@@ -145,7 +135,6 @@ header {
 }
 .stat-item span { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
 
-/* Tech Stack */
 .tech-stack { display: flex; gap: 1rem; margin: 2rem 0 1.5rem; flex-wrap: wrap; }
 .tech-icon {
   display: flex; align-items: center; gap: 8px;
@@ -161,7 +150,6 @@ header {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* SOCIAL ICONS */
 .socialki { display: flex; gap: 1.5rem; }
 .header-socials { margin: 1.5rem 0; justify-content: flex-start; }
 .footer-socials { margin-top: 1.5rem; justify-content: center; }
@@ -189,7 +177,7 @@ header {
 .service-card h3 { color: var(--text-main); margin-bottom: 1rem; font-size: 1.3rem; }
 .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* --- PORTFOLIO (OPRAVA OBRÁZKŮ) --- */
+/* --- PORTFOLIO --- */
 .portfolio-container { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
 .section-title {
   text-align: center; font-size: 2.5rem; margin-bottom: 3rem;
@@ -212,29 +200,25 @@ header {
   border-color: var(--primary);
 }
 
-/* OPRAVENÉ STYLY PRO OBRÁZKY */
 .card-image {
   height: 220px;
   overflow: hidden;
-  background: #0f172a; /* Tmavé pozadí pod obrázky */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #0f172a;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
 }
 
-/* 1. Výchozí styl (pro fotky a screenshoty webů) */
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Vyplní celý prostor, může oříznout kraje */
-  object-position: top center; /* Ořezává se odspodu, vršek zůstane vidět */
+  object-fit: cover;
+  object-position: top center;
   transition: transform 0.5s ease;
 }
 
-/* 2. Speciální styl pro LOGA (přidej class="contain-img" v HTML) */
 .card-image img.contain-img {
-  object-fit: contain; /* Zobrazí se celý obrázek, neořízne se */
-  width: 85%; /* Trochu menší, aby měl "vzduch" okolo */
+  object-fit: contain;
+  width: 85%;
   height: 85%;
 }
 
@@ -253,21 +237,24 @@ header {
 }
 .btn-visit:hover { background: var(--primary); color: #0f172a; box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
 
-/* Malé karty pro spolupráce */
-.secondary-portfolio { margin-top: 0px; padding-top: 0; }
+.secondary-portfolio { margin-top: 0; padding-top: 0; }
 .small-grid { justify-content: center; }
 .small-card { text-align: center; padding: 1.5rem; align-items: center; justify-content: center; }
-.small-card a { text-decoration: none; color: inherit; width: 100%; }
-.small-card img { max-height: 50px; margin-bottom: 1rem; object-fit: contain; }
+.small-card a { text-decoration: none; color: inherit; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.small-card img { 
+  max-width: 150px; 
+  height: auto; 
+  max-height: 60px; 
+  margin-bottom: 1rem; 
+  object-fit: contain; 
+}
 .small-card h3 { font-size: 1.2rem; }
 
-/* --- FOOTER --- */
 footer { 
   text-align: center; padding: 40px 20px; color: var(--text-muted); 
   font-size: 0.9rem; border-top: var(--glass-border); margin-top: 60px; 
 }
 
-/* --- COOKIE BANNER --- */
 .cookie-banner {
   position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
   width: 90%; max-width: 600px;
@@ -282,7 +269,6 @@ footer {
 .cookie-banner p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
 #accept-cookies { padding: 8px 24px; white-space: nowrap; }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .nav-items { display: none; }
   .toggle_btn { display: block; }
