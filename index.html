@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RER51WEBJJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,18 +12,52 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>martyc.eu | Full-Stack Vývojář</title>
+    
+    <title>Matěj Vondráček | Full-Stack Vývojář a Webový Architekt</title>
+    <meta name="description" content="Hledáte spolehlivého programátora? Tvořím rychlé weby, e-shopy na míru a komplexní systémy. PHP, Nette, MySQL specialista zaměřený na ziskové řešení.">
+    <meta name="keywords" content="webový vývojář, tvorba webu, e-shop na míru, PHP programátor, full-stack, optimalizace webu, SEO">
+    <meta name="author" content="Matěj Vondráček">
+    <link rel="canonical" href="https://martyc.eu/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Matěj Vondráček | Tvořím weby, které vydělávají">
+    <meta property="og:description" content="Full-Stack vývojář. Žádné šablony, ale čistý kód a systémy na míru. Podívejte se na mé portfolio.">
+    <meta property="og:url" content="https://martyc.eu/">
+    <meta property="og:image" content="https://martyc.eu/profile.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Matěj Vondráček - Webový vývoj",
+      "image": "https://martyc.eu/profile.jpg",
+      "@id": "https://martyc.eu",
+      "url": "https://martyc.eu",
+      "telephone": "", 
+      "email": "zakazky@martyc.eu",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CZ"
+      },
+      "sameAs": [
+        "https://github.com/mrmartyc",
+        "https://instagram.com/matej.vondracekk"
+      ],
+      "knowsAbout": ["PHP", "Web Development", "SEO", "E-commerce", "MySQL", "JavaScript"]
+    }
+    </script>
 </head>
 <body>
 
@@ -38,7 +73,7 @@
         <nav>
             <div class="nav-bar">
                 <div class="nav-logo">
-                    <a href="https://martyc.eu">martyc<span class="dot">.eu</span></a>
+                    <a href="https://martyc.eu" aria-label="Domovská stránka">martyc<span class="dot">.eu</span></a>
                 </div>
                 
                 <div class="nav-items">
@@ -48,13 +83,13 @@
                     <a href="mailto:zakazky@martyc.eu" class="btn-contact" data-i18n="nav_contact">Kontakt</a>
                     
                     <div class="lang-switch">
-                        <span onclick="changeLanguage('cs')" id="lang-cs" class="active">CZ</span>
+                        <span onclick="changeLanguage('cs')" id="lang-cs" class="active" role="button" tabindex="0">CZ</span>
                         <span class="separator">|</span>
-                        <span onclick="changeLanguage('en')" id="lang-en">EN</span>
+                        <span onclick="changeLanguage('en')" id="lang-en" role="button" tabindex="0">EN</span>
                     </div>
                 </div>
                 
-                <div class="toggle_btn">
+                <div class="toggle_btn" aria-label="Otevřít menu">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
@@ -76,7 +111,7 @@
         <div class="container glass-card">
             <div class="about-content">
                 <div class="about-image-wrapper">
-                    <img src="profile.jpg" alt="Matej Vondracek" class="about-photo">
+                    <img src="profile.jpg" alt="Matěj Vondráček - Full-Stack Vývojář" class="about-photo" width="350" height="350" loading="eager">
                 </div>
 
                 <div class="about-text">
@@ -85,9 +120,9 @@
                     <h1><span data-i18n="hero_hello">Tvořím webové systémy,</span> <br><span class="text-gradient" data-i18n="hero_span_name">které vydělávají.</span></h1>
 
                     <div class="socialki header-socials">
-                        <a href="https://instagram.com/matej.vondracekk" target="_blank" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://github.com/mrmartyc" target="_blank" class="social-icon github"><i class="fa-brands fa-github"></i></a>
-                        <a href="mailto:zakazky@martyc.eu" target="_blank" class="social-icon envelope"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://instagram.com/matej.vondracekk" target="_blank" class="social-icon instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/mrmartyc" target="_blank" class="social-icon github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:zakazky@martyc.eu" target="_blank" class="social-icon envelope" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                     
                     <div class="stats-row">
@@ -101,7 +136,7 @@
                         </div>
                     </div>
 
-                    <p data-i18n="hero_desc_1">Nejsem jen programátor, jsem váš technický partner. Za poslední roky jsem přešel od tvorby jednoduchých webů k vývoji komplexních e-shopů a interních systémů na míru. Rozumím tomu, že web musí nejen vypadat dobře, ale hlavně plnit obchodní cíle.</p>
+                    <p data-i18n="hero_desc_1">Nejsem jen programátor, jsem váš technický partner. Za poslední roky jsem přešel od tvorby jednoduchých webů k vývoji komplexních e-shopů a interních systémů na míru.</p>
                     <p data-i18n="hero_desc_2">Moje specializace je PHP backend a databázová architektura. Díky Full-Stack znalostem doručuji robustní řešení efektivně a čistě.</p>
                     
                     <div class="tech-stack">
@@ -135,59 +170,61 @@
         <div class="service-card">
             <div class="icon-box"><i class="fa-solid fa-wrench"></i></div>
             <h3 data-i18n="service_3_title">Správa & Údržba</h3>
-            <p data-i18n="service_3_desc">Webem to nekončí. Postaráme se o technické aktualizace, zálohování i drobné úpravy textů či fotek. Vy se věnujte podnikání, techniku nechte na nás.</p>
+            <p data-i18n="service_3_desc">Webem to nekončí. Postaráme se o technické aktualizace, zálohování i drobné úpravy textů či fotek.</p>
         </div>
         <div class="service-card">
             <div class="icon-box"><i class="fa-solid fa-search"></i></div>
-            <h3 data-i18n="service_4_title">Aby vás bylo vidět</h3>
-            <p data-i18n="service_4_desc">Mít web nestačí, zákazníci ho musí najít. Pomůžeme vám dostat se na přední příčky ve vyhledávačích (Google, Seznam), abyste měli více objednávek.</p>
+            <h3 data-i18n="service_4_title">SEO Optimalizace</h3>
+            <p data-i18n="service_4_desc">Pomůžeme vám dostat se na přední příčky ve vyhledávačích (Google, Seznam), abyste měli více objednávek.</p>
         </div>
     </div>
 </section>
+
     <section class="portfolio-container" id="portfolio">
         <h2 class="section-title" data-i18n="section_portfolio">Ukázky mé práce</h2>
         <div class="projects-grid">
+            
             <div class="project-card">
                 <div class="card-image">
-                    <img src="transparent_image.png" alt="Sigma Pumpy" class="contain-img">
+                    <img src="transparent_image.png" alt="Sigma Pumpy e-shop a systém" class="contain-img" loading="lazy" width="400" height="300">
                 </div>
                 <div class="card-content">
                     <h3>Sigma Pumpy Inc.</h3>
                     <p data-i18n="proj_sigma">Komplexní školní projekt s vlastním objednávkovým systémem.</p>
-                    <a href="https://sigmapumpy.martyc.eu" class="btn-visit"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://sigmapumpy.martyc.eu" class="btn-visit" aria-label="Navštívit web Sigma Pumpy"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="card-image">
-                    <img src="pivecko.png" alt="U Hůlů" class="contain-img">
+                    <img src="pivecko.png" alt="Hospoda U Hůlů web" class="contain-img" loading="lazy" width="400" height="300">
                 </div>
                 <div class="card-content">
                     <h3>U Hůlů</h3>
                     <p data-i18n="proj_uhulu">Prezentační web pro gastro podnik s důrazem na rychlost.</p>
-                    <a href="https://uhulu.cz" class="btn-visit"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://uhulu.cz" class="btn-visit" aria-label="Navštívit web U Hůlů"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="card-image">
-                    <img src="logofull.png" alt="My Website" class="contain-img">
+                    <img src="logofull.png" alt="Osobní portfolio martyc.eu" class="contain-img" loading="lazy" width="400" height="300">
                 </div>
                 <div class="card-content">
                     <h3 data-i18n="proj_title_personal">Osobní Portfolio</h3>
                     <p data-i18n="proj_personal">Ukázka moderních technologií a designu.</p>
-                    <a href="https://martyc.eu" class="btn-visit"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://martyc.eu" class="btn-visit" aria-label="Navštívit web"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
              <div class="project-card">
                 <div class="card-image">
-                    <img src="logo_white.png" alt="Parties Fever" class="contain-img">
+                    <img src="logo_white.png" alt="Parties Fever agentura" class="contain-img" loading="lazy" width="400" height="300">
                 </div>
                 <div class="card-content">
                     <h3>Parties Fever</h3>
                     <p data-i18n="proj_parties">Portfolio showcase pro eventovou agenturu.</p>
-                    <a href="https://parties-fever.martyc.eu" class="btn-visit"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://parties-fever.martyc.eu" class="btn-visit" aria-label="Navštívit web"><span data-i18n="btn_visit">Prohlédnout</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -197,14 +234,14 @@
         <h2 class="section-title" data-i18n="section_coop">Dlouhodobé spolupráce</h2>
         <div class="projects-grid small-grid">
             <div class="project-card small-card">
-                <a href="https://nejlepsi-nabytek.cz">
-                    <img src="logo.png" alt="Nejlepší nábytek">
+                <a href="https://nejlepsi-nabytek.cz" title="Nejlepší nábytek.cz">
+                    <img src="logo.png" alt="Nejlepší nábytek logo" loading="lazy" width="200" height="100">
                     <h3>Nejlepší nábytek.cz</h3>
                 </a>
             </div>
             <div class="project-card small-card">
-                <a href="https://najlepsi-nabytok.sk">
-                    <img src="logo (3).png" alt="Najlepší nábytok">
+                <a href="https://najlepsi-nabytok.sk" title="Najlepší nábytok.sk">
+                    <img src="logo (3).png" alt="Najlepší nábytok logo" loading="lazy" width="200" height="100">
                     <h3>Najlepší nábytok.sk</h3>
                 </a>
             </div>
@@ -215,9 +252,9 @@
         <div class="footer-content">
             <p>&copy; 2026 martyc.eu. <span data-i18n="footer_rights">Všechna práva vyhrazena.</span></p>
             <div class="socialki footer-socials">
-                <a href="https://instagram.com/matej.vondracekk" target="_blank" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://github.com/mrmartyc" target="_blank" class="social-icon github"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:zakazky@martyc.eu" target="_blank" class="social-icon envelope"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://instagram.com/matej.vondracekk" target="_blank" class="social-icon instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/mrmartyc" target="_blank" class="social-icon github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:zakazky@martyc.eu" target="_blank" class="social-icon envelope" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -231,8 +268,8 @@
     <button id="accept-cookies" class="btn-visit" data-i18n="cookie_btn">Rozumím</button>
 </div>
 
-<script src="particles.js"></script>
-<script src="js/app.js"></script>
+<script src="particles.js" defer></script>
+<script src="js/app.js" defer></script>
 
 </body>
 </html>
