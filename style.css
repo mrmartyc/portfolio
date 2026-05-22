@@ -144,6 +144,7 @@ header {
   transition: all 0.3s ease; cursor: default;
 }
 .tech-icon i { font-size: 1.2rem; color: var(--primary); }
+.tech-svg-icon { width: 1.2rem; height: 1.2rem; }
 .tech-icon:hover {
   transform: translateY(-3px); border-color: var(--primary);
   color: var(--text-main); background: rgba(56, 189, 248, 0.1);
