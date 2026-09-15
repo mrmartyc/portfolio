@@ -87,12 +87,12 @@ header {
 .dropdown_menu {
   position: absolute; right: 20px; top: 90px; width: 300px;
   background: rgba(30, 41, 59, 0.95); backdrop-filter: blur(15px);
-  border-radius: 15px; border: var(--glass-border);
+  border-radius: 15px; border: 1px solid transparent;
   overflow: hidden; height: 0;
   transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex; flex-direction: column; align-items: center;
 }
-.dropdown_menu.open { height: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.dropdown_menu.open { height: 280px; border: var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .dropdown_menu li { list-style: none; width: 100%; text-align: center; padding: 15px 0; }
 .dropdown_menu li a { color: var(--text-main); text-decoration: none; font-size: 1.1rem; display: block; }
 .mobile-lang { font-weight: bold; color: var(--text-muted); cursor: pointer; }
